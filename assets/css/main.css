@@ -1,0 +1,483 @@
+/*! MornRain Zen - assets/css/main.css
+ *  Loaded after style.css. Zero external dependencies.
+ */
+
+/* 1. Design tokens */
+:root {
+	--mz-bg: #f4f2ec;
+	--mz-card: #ffffff;
+	--mz-ink: #3c4038;
+	--mz-muted: #8a8f82;
+	--mz-sage: #7f9c83;
+	--mz-sage-soft: #dfe7dd;
+	--mz-line: #e4e1d7;
+	--mz-radius: 16px;
+	--mz-shadow: 0 10px 30px rgba(60, 64, 56, 0.08);
+	--mz-shadow-hover: 0 16px 40px rgba(60, 64, 56, 0.14);
+}
+
+/* 2. Reset */
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+
+html {
+	-webkit-text-size-adjust: 100%;
+}
+
+body {
+	margin: 0;
+	padding: 0;
+	background-color: var(--mz-bg);
+	color: var(--mz-ink);
+	line-height: 1.75;
+}
+
+/* 3. Typography */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	margin: 2em 0 0.7em;
+	font-weight: 600;
+	line-height: 1.35;
+	color: var(--mz-ink);
+}
+
+p { margin: 0 0 1.4em; }
+
+blockquote {
+	margin: 2em 0;
+	padding: 1.4em 1.6em;
+	background-color: var(--mz-sage-soft);
+	border-radius: var(--mz-radius);
+	color: #4f5a4f;
+}
+
+code,
+kbd,
+pre {
+	font-family: Menlo, Consolas, "Courier New", monospace;
+	font-size: 0.9em;
+}
+
+pre {
+	padding: 1.2em 1.4em;
+	overflow-x: auto;
+	background-color: #f0efe9;
+	border-radius: 12px;
+}
+
+a {
+	color: #4e7a58;
+	text-decoration: none;
+}
+
+a:hover,
+a:focus {
+	color: var(--mz-sage);
+	text-decoration: underline;
+	text-underline-offset: 0.2em;
+}
+
+img,
+svg,
+video,
+iframe {
+	max-width: 100%;
+	height: auto;
+}
+
+/* 4. Layout */
+.site {
+	max-width: 1080px;
+	margin: 0 auto;
+	padding: 3rem 1.5rem 4rem;
+}
+
+.site-header {
+	padding-bottom: 2.5rem;
+	text-align: center;
+}
+
+.site-title {
+	margin: 0;
+	font-size: 1.9rem;
+	font-weight: 600;
+	letter-spacing: 0.06em;
+}
+
+.site-title a {
+	color: var(--mz-ink);
+}
+
+.site-description {
+	margin: 0.6rem 0 0;
+	color: var(--mz-muted);
+	font-size: 0.95rem;
+}
+
+.site-logo img {
+	max-height: 64px;
+	width: auto;
+}
+
+/* 5. Navigation */
+.main-navigation {
+	margin-top: 1.5rem;
+}
+
+.main-navigation ul {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	gap: 0.6rem 1.8rem;
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+.main-navigation a {
+	display: inline-block;
+	padding: 0.35em 0;
+	color: var(--mz-muted);
+	font-size: 0.95rem;
+	border-bottom: 2px solid transparent;
+	transition: color 0.2s ease, border-color 0.2s ease;
+}
+
+.main-navigation a:hover,
+.main-navigation .current-menu-item > a {
+	color: var(--mz-sage);
+	border-bottom-color: var(--mz-sage);
+}
+
+.main-navigation ul ul {
+	position: absolute;
+	z-index: 20;
+	display: none;
+	min-width: 12rem;
+	padding: 0.8rem 1rem;
+	background-color: var(--mz-card);
+	border-radius: 12px;
+	box-shadow: var(--mz-shadow);
+	text-align: left;
+}
+
+.main-navigation li {
+	position: relative;
+}
+
+.main-navigation li:hover > ul,
+.main-navigation li:focus-within > ul {
+	display: block;
+}
+
+.menu-toggle {
+	display: none;
+	padding: 0.6em 1.4em;
+	background-color: var(--mz-card);
+	border: 1px solid var(--mz-line);
+	border-radius: 999px;
+	color: var(--mz-ink);
+	font: inherit;
+	cursor: pointer;
+}
+
+/* 6. Card grid */
+.site-main {
+	padding-top: 1rem;
+}
+
+.post-list {
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));
+	gap: 2rem;
+}
+
+.post-card {
+	display: flex;
+	flex-direction: column;
+	overflow: hidden;
+	background-color: var(--mz-card);
+	border-radius: var(--mz-radius);
+	box-shadow: var(--mz-shadow);
+	transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.post-card:hover,
+.post-card:focus-within {
+	transform: translateY(-4px);
+	box-shadow: var(--mz-shadow-hover);
+}
+
+.post-card .post-thumbnail {
+	display: block;
+	margin: 0;
+	overflow: hidden;
+}
+
+.post-card .post-thumbnail img {
+	display: block;
+	width: 100%;
+	aspect-ratio: 3 / 2;
+	object-fit: cover;
+}
+
+.post-card .entry-header,
+.post-card .entry-summary,
+.post-card .read-more {
+	padding-left: 1.5rem;
+	padding-right: 1.5rem;
+}
+
+.post-card .entry-header {
+	padding-top: 1.5rem;
+}
+
+.post-card .entry-summary {
+	flex: 1 1 auto;
+	color: #5d6357;
+	font-size: 0.95rem;
+}
+
+.post-card .read-more {
+	padding-bottom: 1.5rem;
+	font-size: 0.9rem;
+	font-weight: 600;
+}
+
+.entry-title {
+	margin: 0 0 0.5rem;
+	font-size: 1.25rem;
+}
+
+.entry-title a {
+	color: var(--mz-ink);
+}
+
+.entry-meta {
+	margin-bottom: 0.9rem;
+	color: var(--mz-muted);
+	font-size: 0.82rem;
+}
+
+.entry-meta > * + *::before {
+	content: " \00b7 ";
+}
+
+/* 7. Single entry */
+.entry {
+	padding: 2.5rem;
+	background-color: var(--mz-card);
+	border-radius: var(--mz-radius);
+	box-shadow: var(--mz-shadow);
+}
+
+.entry .post-thumbnail {
+	margin: 0 0 2rem;
+	border-radius: 12px;
+	overflow: hidden;
+}
+
+.entry-footer {
+	margin-top: 2rem;
+	padding-top: 1.5rem;
+	border-top: 1px solid var(--mz-line);
+	color: var(--mz-muted);
+	font-size: 0.88rem;
+}
+
+/* 8. Page header and pagination */
+.page-header {
+	margin-bottom: 2rem;
+	text-align: center;
+}
+
+.page-title {
+	margin: 0;
+	font-size: 1.6rem;
+}
+
+.archive-description {
+	margin-top: 0.8rem;
+	color: var(--mz-muted);
+}
+
+.pagination,
+.navigation.posts-navigation {
+	margin-top: 3rem;
+	text-align: center;
+}
+
+.pagination .page-numbers {
+	display: inline-block;
+	min-width: 2.4rem;
+	padding: 0.4em 0.6em;
+	margin: 0 0.15rem;
+	background-color: var(--mz-card);
+	border-radius: 10px;
+	color: var(--mz-ink);
+}
+
+.pagination .current,
+.pagination a:hover {
+	background-color: var(--mz-sage);
+	color: #ffffff;
+}
+
+/* 9. Footer */
+.site-footer {
+	margin-top: 4rem;
+	padding-top: 2rem;
+	border-top: 1px solid var(--mz-line);
+	color: var(--mz-muted);
+	font-size: 0.88rem;
+	text-align: center;
+}
+
+.site-footer ul {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	gap: 1.4rem;
+	margin: 0 0 1rem;
+	padding: 0;
+	list-style: none;
+}
+
+/* 10. Forms */
+input[type="text"],
+input[type="search"],
+input[type="email"],
+input[type="url"],
+textarea {
+	width: 100%;
+	padding: 0.75em 1em;
+	background-color: var(--mz-card);
+	border: 1px solid var(--mz-line);
+	border-radius: 12px;
+	color: var(--mz-ink);
+	font: inherit;
+}
+
+button,
+input[type="submit"] {
+	padding: 0.75em 1.8em;
+	background-color: var(--mz-sage);
+	border: 0;
+	border-radius: 999px;
+	color: #ffffff;
+	font: inherit;
+	font-weight: 600;
+	cursor: pointer;
+}
+
+button:hover,
+input[type="submit"]:hover {
+	background-color: #6a866e;
+}
+
+/* 11. Comments */
+.comment-list {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+.comment-body {
+	margin-bottom: 1rem;
+	padding: 1.4rem;
+	background-color: var(--mz-card);
+	border-radius: 12px;
+}
+
+.comment-list .children {
+	margin-left: 1.5rem;
+	list-style: none;
+}
+
+/* 12. Accessibility */
+.screen-reader-text {
+	position: absolute !important;
+	width: 1px;
+	height: 1px;
+	margin: -1px;
+	padding: 0;
+	overflow: hidden;
+	clip: rect(1px, 1px, 1px, 1px);
+	clip-path: inset(50%);
+	border: 0;
+	white-space: nowrap;
+}
+
+.screen-reader-text:focus,
+.skip-link:focus {
+	position: fixed;
+	top: 0.75rem;
+	left: 0.75rem;
+	z-index: 999;
+	width: auto;
+	height: auto;
+	padding: 0.6em 1.2em;
+	clip: auto;
+	clip-path: none;
+	background-color: var(--mz-sage);
+	border-radius: 999px;
+	color: #ffffff;
+}
+
+/* 13. Responsive */
+@media (max-width: 720px) {
+	.site {
+		padding: 2rem 1.1rem 3rem;
+	}
+
+	.post-list {
+		grid-template-columns: 1fr;
+		gap: 1.5rem;
+	}
+
+	.entry {
+		padding: 1.6rem;
+	}
+
+	.main-navigation .menu-toggle {
+		display: inline-block;
+	}
+
+	.main-navigation .primary-menu {
+		display: none;
+	}
+
+	.main-navigation.is-open .primary-menu {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		margin-top: 1rem;
+	}
+}
+
+/* 14. Print */
+@media print {
+	body {
+		background: #ffffff;
+	}
+
+	.site-header,
+	.site-footer,
+	.menu-toggle,
+	.pagination {
+		display: none;
+	}
+
+	.post-card,
+	.entry {
+		box-shadow: none;
+		border: 1px solid #dddddd;
+	}
+}
