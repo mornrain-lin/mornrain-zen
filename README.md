@@ -1,14 +1,3 @@
----
-AIGC:
-    Label: "1"
-    ContentProducer: 001191440300708461136T1XGW3
-    ProduceID: cf93d2ba4252e3fc820ac383cb09c649_7793f62abe7a11f18019525400248c00
-    ReservedCode1: DfsRvHWPspjt7txb62jKEuEWYo8W11F9uJDOkyWnOKSHY2JtSkvN2cVTQBocIMRM5MT3NsG2Cv810FQsvPiWMkcnLXj83aHa8MIiku21CsNGFabmSDmFgs/fR9xGxd/wLMff7OFoQUxYiYVaVGSTVsYl5K1OkTkh/vQYn/oUMWnPwEAY+8wCVW2W2qQ=
-    ContentPropagator: 001191440300708461136T1XGW3
-    PropagateID: cf93d2ba4252e3fc820ac383cb09c649_7793f62abe7a11f18019525400248c00
-    ReservedCode2: DfsRvHWPspjt7txb62jKEuEWYo8W11F9uJDOkyWnOKSHY2JtSkvN2cVTQBocIMRM5MT3NsG2Cv810FQsvPiWMkcnLXj83aHa8MIiku21CsNGFabmSDmFgs/fR9xGxd/wLMff7OFoQUxYiYVaVGSTVsYl5K1OkTkh/vQYn/oUMWnPwEAY+8wCVW2W2qQ=
----
-
 # MornRain Zen
 
 > A calm, card-based layout for plant, wellness and slow-living journals.
